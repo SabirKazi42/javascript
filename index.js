@@ -1,20 +1,18 @@
-const words = [
-  "apple",
-  "banana",
-  "apple",
-  "orange",
-  "banana",
-  "apple",
-  "grape",
+const students = [
+  { name: "Alice", grade: "A" },
+  { name: "Bob", grade: "B" },
+  { name: "Charlie", grade: "A" },
+  { name: "David", grade: "C" },
+  { name: "Eve", grade: "B" },
 ];
 
-const r = words.reduce((arr, word) => {
-  if (arr[word]) {
-    arr[word] += 1;
+const r = students.reduce((rs, student) => {
+  if (rs[student.grade]) {
+    rs[student.grade].push(student.name);
   } else {
-    arr[word] = 1;
+    rs[student.grade] = [student.name];
   }
-  return arr;
+  return rs;
 }, {});
 
 console.log(r);
