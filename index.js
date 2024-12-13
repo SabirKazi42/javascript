@@ -1,5 +1,6 @@
-const s = new Date();
+const date1 = new Date("2023-12-31");
+const date2 = new Date("2024-01-01");
 
-s.setFullYear(2023);
-
-console.log(s.getFullYear());
+if (date1 < date2) {
+  console.log("Happy New year");
+}
