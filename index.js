@@ -1,11 +1,20 @@
-const sales = [
-  { product: "Laptop", quantity: 2, price: 1200 },
-  { product: "Phone", quantity: 5, price: 800 },
-  { product: "Tablet", quantity: 3, price: 600 },
+const words = [
+  "apple",
+  "banana",
+  "apple",
+  "orange",
+  "banana",
+  "apple",
+  "grape",
 ];
 
-const r = sales.reduce((start, sale) => {
-  return start + sale.price;
-}, 0);
+const r = words.reduce((arr, word) => {
+  if (arr[word]) {
+    arr[word] += 1;
+  } else {
+    arr[word] = 1;
+  }
+  return arr;
+}, {});
 
-console.log(`Hello ${r}`);
+console.log(r);
